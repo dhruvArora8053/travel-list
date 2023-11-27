@@ -71,7 +71,7 @@ function Form({ onAddItems }) {
   }
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
+    <form className="add-form">
       <h3>What do you need for your 😍 trip?</h3>
       <select value={quantity} onChange={(e) => setQuantity(+e.target.value)}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
@@ -86,7 +86,7 @@ function Form({ onAddItems }) {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button>Add</button>
+      <button onSubmit={handleSubmit}>Add</button>
     </form>
   );
 }
